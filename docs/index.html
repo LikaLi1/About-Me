@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Профиль</title>
+    <style>
+        /* --- Основные стили и шрифты --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117; /* Темный фон */
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #61dafb; /* Цвет ссылок */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Баннер --- */
+        .banner {
+            background-image: linear-gradient(135deg, #2f80ed, #34ace0);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .banner h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* --- Приветствие --- */
+        .greeting {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #161b22;
+            border-radius: 12px;
+        }
+
+        /* --- Раздел "Навыки и Проекты" (Грид) --- */
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Две колонки */
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .skills-text {
+            background-color: #1f2937;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .skills-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .skills-images img {
+             max-width: 150px; /* Размер логотипов */
+             height: auto;
+             border-radius: 8px;
+             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             border: 2px solid transparent;
+        }
+
+        .skills-images img:hover {
+             transform: scale(1.07);
+             box-shadow: 0 8px 25px rgba(0,255,255,0.4);
+             border-color: #61dafb;
+        }
+
+        /* --- Паттерн в футере --- */
+        .footer-pattern {
+            background-color: #111517;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-pattern .logo-row {
+             display: flex;
+             justify-content: center;
+             gap: 35px; /* Расстояние между логотипами в строке */
+             flex-wrap: wrap;
+         }
+
+         .footer-pattern img.small-logo {
+             width: 35px; /* Маленькие логотипы */
+             height: auto;
+         }
+
+         @media (max-width: 768px) {
+             .skills-section {
+                 grid-template-columns: 1fr; /* Одна колонка на моб. устройствах */
+             }
+         }
+    </style>
+</head>
+<body>
+
+    <!-- 🎨 БАННЕР -->
+    <section class="banner">
+        <h1>ВАШ_НИК</h1>
+    </section>
+
+    <!-- 👋 ПРИВЕТСТВИЕ -->
+    <section class="greeting">
+        <h2>Привет! 👋</h2>
+        <p>Меня зовут [Ваше Имя]. Я [Ваша Профессия/Роль]. Здесь я делюсь своими проектами, навыками и идеями.</p>
+    </section>
+
+    <!-- 🛠️ НАВЫКИ И ПРОЕКТЫ -->
+    <section class="skills-section">
+        
+        <!-- ЛЕВАЯ ЧАСТЬ (Текст) -->
+        <div class="skills-text">
+            
+            <h3>Мои Навыки</h3>
+            
+            <ul style="list-style-type:none; padding-left:0;">
+                <li><strong>HTML / CSS / JS</strong> — Адаптивная верстка и интерактивность.</li>
+                <li><strong>Python / JavaScript</strong> — Бэкенд и фронтенд разработка.</li>
+                <li><strong>UI/UX Дизайн</strong> — Создание удобных интерфейсов.</li>
+                <li><strong>Git / GitHub</strong> — Управление версиями кода.</li>
+                <!-- Добавьте свои навыки сюда -->
+                <li><strong>Ваши навыки...</strong></li>
+                
+                <hr style="border-top: 1px solid #3a444d; margin: 25px 0;">
+                
+                <h3>Проекты</h3>
+                
+                <ul style="list-style-type:none; padding-left:0;">
+                    <li><a href="#">Проект №1 (Название)</a></li>
+                    <li><a href="#">Проект №2 (Название)</a></li>
+                    <!-- Добавьте ссылки на свои репозитории -->
+                    <li><a href="#">Ваш Проект...</a></li>
+                </ul>
+                
+                <p>Полный список проектов можно найти в моем профиле на GitHub.</p>
+                
+                <h3>Контакты</h3>
+                <p>Telegram/Email/LinkedIn</p>
+                
+                <a href="#" style="display: inline-block; margin-top: 15px; padding: 12px 25px; background-color:#61dafb; color:#111; border-radius:9999px; font-weight:bold;">Связаться со мной</a>
+                
+                <p style="margin-top:30px;">*Этот профиль создан с помощью GigaChat.*</p>
+                
+                <!-- Кнопка "Назад наверх" -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-top:30px; padding:8px 16px; background:#61dafb; border:none; border-radius:8px; cursor:pointer;">Наверх ↑</button>
+
+        </div>
+
+        <!-- ПРАВАЯ ЧАСТЬ (Картинки) -->
+        <div class="skills-images">
+            
+             <!-- Замените src на ссылки на ваши логотипы или фото -->
+             <img src="https://placehold.co/150x80/FFD700/FFFFFF/png?text=Skill+1" alt="Логотип навыка">
+             <img src="https://placehold.co/150x80/98FB98/FFFFFF/png?text=Skill+2" alt="Логотип навыка">
+             <img src="https://placehold.co/150x80/87CEFA/FFFFFF/png?text=Skill+3" alt="Логотип навыка">
+             
+             <!-- Добавьте больше изображений по необходимости -->
+             
+             <img src="https://placehold.co/150x80/DDA0DD/FFFFFF/png?text=Project+1" alt="Логотип проекта">
+
+           <!-- Кнопка "Назад наверх" дублируется для мобильной версии -->
+           <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-top:30px; padding:8px 16px; background:#61dafb; border:none; border-radius:8px; cursor:pointer;">Наверх ↑</button>
+
+       </div>
+        
+    </section>
+
+
+    <!-- 🧵 ПАТТЕРН В ФУТЕРЕ -->
+    <footer class="footer-pattern">
+        
+         <div class="logo-row">
+              <!-- Используйте маленькие иконки или логотипы технологий -->
+              <img class="small-logo" src="https://cdn-icons-png.flaticon.com/512/732/732207.png" alt="HTML"> <!-- HTML -->
+              <img class="small-logo" src="https://cdn-icons-png.flasticon.com/512/732/732209.png" alt="CSS"> <!-- CSS -->
+              <img class="small-logo" src="https://cdn-icons-png.flaticon.com/512/732/732219.png" alt="JS"> <!-- JS -->
+              <!-- Добавьте свои логотипы здесь -->
+              <img class="small-logo" src="https://cdn-icons-png.flaticon.com/512/732/732279.png" alt="Python"> <!-- Python -->
+              <img class="small-logo" src="https://cdn-icons-png.flaticon.com/512/732/732287.png" alt="Git"> <!-- Git -->
+         </div>
+         
+         <p style="margin-top: 15px;">© [Текущий Год] ВАШ_НИК. Все права защищены.</p>
+         
+    </footer>
+
+</body>
+</html>
