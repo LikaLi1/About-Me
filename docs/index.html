@@ -150,16 +150,33 @@
 
         /* LOGOS */
         .logo-row {
-            display: flex;
-            justify-content: center;
-            gap: 35px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    padding: 10px 5px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
 
-        .small-logo {
-            width: 35px;
-        }
+/* скрыть скроллбар (красиво) */
+.logo-row::-webkit-scrollbar {
+    display: none;
+}
+
+.logo-row {
+    scrollbar-width: none;
+}
+
+.small-logo {
+    width: 35px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.small-logo:hover {
+    transform: scale(1.2);
+}
 
         /* FOOTER */
         .footer-pattern {
