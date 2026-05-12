@@ -79,6 +79,18 @@
              border-color: #61dafb;
         }
 
+        .scroll-top {
+            position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 8px 16px;
+    background: #61dafb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
         .footer-pattern {
             background-color: #111517;
             padding: 40px 20px;
@@ -147,9 +159,6 @@
                 
                 <a href="#" style="display: inline-block; margin-top: 15px; padding: 12px 25px; background-color:#61dafb; color:#111; border-radius:9999px; font-weight:bold;">Связаться со мной</a>
                 
-                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-top:30px; padding:8px 16px; background:#61dafb; border:none; border-radius:8px; cursor:pointer;">Наверх ↑</button>
-
-        </div>
 
         <div class="skills-images">
             
@@ -159,8 +168,7 @@
              
              <img src="https://placehold.co/150x80/DDA0DD/FFFFFF/png?text=Project+1" alt="Логотип проекта">
 
-           <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="margin-top:30px; padding:8px 16px; background:#61dafb; border:none; border-radius:8px; cursor:pointer;">Наверх ↑</button>
-
+       <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Наверх ↑</button>
        </div>
         <div class="logo-row">
               <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/androidstudio.svg" alt="AndroidStudio">
