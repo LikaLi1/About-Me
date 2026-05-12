@@ -9,3 +9,8 @@
         <img src="https://github-readme-stats.vercel.app/api?username=LikaLi1&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage" alt="GitHub Stats" />
     </a>
 </p>
+
+<figure>
+  <img src="image.jpg" alt="Описание для читателей">
+  <figcaption>Подпись к изображению: вот что на нем изображено</figcaption>
+</figure>
