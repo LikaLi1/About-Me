@@ -1,293 +1,280 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About me</title>
 
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2e466b;
-            color: #dcdbdb;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2e466b;
+    color: #dcdbdb;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-        a {
-            color: #61dafb;
-            text-decoration: none;
-        }
+/* LINKS */
+a {
+    color: #61dafb;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* HEADER */
+.banner {
+    background-image: linear-gradient(135deg, #2f80ed, #34ace0);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
 
-        /* HEADER */
-        .banner {
-            background-image: linear-gradient(135deg, #2f80ed, #34ace0);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
+.banner h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
 
-        .banner h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+/* INTRO */
+.greeting {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #161b22;
+    border-radius: 12px;
+}
 
-        /* INTRO */
-        .greeting {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #161b22;
-            border-radius: 12px;
-        }
+/* SKILLS */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-        /* SKILLS LAYOUT */
-        .skills-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+.skills-text {
+    background-color: #1f2937;
+    padding: 25px;
+    border-radius: 12px;
+}
 
-        .skills-text {
-            background-color: #1f2937;
-            padding: 25px;
-            border-radius: 12px;
-        }
+/* CARD */
+.stats-card {
+    margin-top: 25px;
+    background: #111827;
+    border-radius: 14px;
+    padding: 18px;
+    width: 260px;
+    border: 1px solid rgba(97,218,251,0.2);
+}
 
-        /* SKILL CARD */
-        .stats-card {
-            margin-top: 25px;
-            background: #111827;
-            border-radius: 14px;
-            padding: 18px;
-            width: 260px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            border: 1px solid rgba(97,218,251,0.2);
-            transition: transform 0.3s ease;
-        }
+.trophy {
+    font-size: 32px;
+    text-align: center;
+}
 
-        .stats-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .trophy {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .skill-row {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #dcdbdb;
-        }
-
-        .skill-percent {
-            color: #61dafb;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #1f2937;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 75%;
-            background: linear-gradient(90deg, #61dafb, #34ace0);
-            border-radius: 20px;
-            transition: width 0.6s ease;
-        }
-
-        /* IMAGES */
-        .skills-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .skills-images img {
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border: 2px solid transparent;
-            transition: transform 0.3s ease;
-        }
-
-        .skills-images img:hover {
-            transform: scale(1.07);
-        }
-
-        /* BUTTON */
-        .scroll-top {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            padding: 10px 16px;
-            background: #61dafb;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            font-weight: bold;
-        }
-
-        /* LOGOS */
-        .logo-row {
+.skill-row {
     display: flex;
-    gap: 25px;
-    overflow-x: auto;
-    padding: 10px 5px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    justify-content: space-between;
+    margin: 10px 0;
 }
 
-/* скрыть скроллбар (красиво) */
-.logo-row::-webkit-scrollbar {
-    display: none;
+.skill-percent {
+    color: #61dafb;
 }
 
-.logo-row {
-    scrollbar-width: none;
+/* PROGRESS */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #1f2937;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 75%;
+    background: linear-gradient(90deg, #61dafb, #34ace0);
+}
+
+/* ===== APPLE STYLE LOGO MARQUEE ===== */
+
+.logo-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.logo-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 18s linear infinite;
+}
+
+.logo-set {
+    display: flex;
+    gap: 40px;
+    align-items: center;
 }
 
 .small-logo {
-    width: 35px;
+    width: 38px;
+    opacity: 0.85;
+    transition: 0.25s ease;
     flex: 0 0 auto;
-    scroll-snap-align: center;
-    transition: transform 0.3s ease;
 }
 
 .small-logo:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
+    opacity: 1;
 }
 
-        /* FOOTER */
-        .footer-pattern {
-            background-color: #111517;
-            padding: 40px 20px;
-            text-align: center;
-        }
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .skills-section {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* pause on hover */
+.logo-wrapper:hover .logo-track {
+    animation-play-state: paused;
+}
+
+/* fade edges */
+.logo-wrapper::before,
+.logo-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+}
+
+.logo-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #1f2937, transparent);
+}
+
+.logo-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #1f2937, transparent);
+}
+
+/* BUTTON */
+.scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 16px;
+    background: #61dafb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* FOOTER */
+.footer-pattern {
+    background-color: #111517;
+    text-align: center;
+    padding: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .skills-section {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <section class="banner">
-        <h1>LikaLi1</h1>
-    </section>
+<div class="banner">
+    <h1>LikaLi1</h1>
+</div>
 
-    <section class="greeting">
-        <h2>Hi</h2>
-        <p>
-            My name is Beth, and I'm IT specialist (design and RPO).
-            Here I gather projects, skills and ideas 🚀
-        </p>
-    </section>
+<div class="greeting">
+    <h2>Hi</h2>
+    <p>My name is Beth, IT specialist. Portfolio & experiments 🚀</p>
+</div>
 
-    <section class="skills-section">
+<div class="skills-section">
 
-        <!-- LEFT TEXT -->
-        <div class="skills-text">
+    <div class="skills-text">
 
-            <h3>My skills</h3>
+        <h3>Skills</h3>
+        <ul style="list-style:none; padding:0;">
+            <li>HTML / CSS / JS</li>
+            <li>Python</li>
+            <li>UI/UX Design</li>
+        </ul>
 
-            <ul style="list-style:none; padding-left:0;">
-                <li><strong>HTML / CSS / JS</strong> — Frontend</li>
-                <li><strong>Python / JavaScript</strong> — Backend & logic</li>
-                <li><strong>UI/UX Design</strong> — Interfaces</li>
-                <li><strong>Git / GitHub</strong> — Version control</li>
-            </ul>
+        <h3>Projects</h3>
+        <ul style="list-style:none; padding:0;">
+            <li><a href="#">Project 1</a></li>
+            <li><a href="#">Project 2</a></li>
+        </ul>
 
-            <hr style="border-top: 1px solid #3a444d; margin: 25px 0;">
+        <!-- CARD -->
+        <div class="stats-card">
+            <div class="trophy">🏆</div>
 
-            <h3>Projects</h3>
-            <ul style="list-style:none; padding-left:0;">
-                <li><a href="#">Project 1</a></li>
-                <li><a href="#">Project 2</a></li>
-                <li><a href="#">Project ...</a></li>
-            </ul>
-
-            <h3>Contact</h3>
-            <p>Telegram</p>
-            <p>Email</p>
-            <p>LinkedIn</p>
-
-            <a href="#" style="display:inline-block; margin-top:15px; padding:12px 25px; background:#61dafb; color:#111; border-radius:9999px; font-weight:bold;">
-                Contact me
-            </a>
-
-            <!-- 🏆 SKILL CARD -->
-            <div class="stats-card">
-                <div class="trophy">🏆</div>
-
-                <div class="skill-row">
-                    <span>C++</span>
-                    <span class="skill-percent">75%</span>
-                </div>
-
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
+            <div class="skill-row">
+                <span>C++</span>
+                <span class="skill-percent">75%</span>
             </div>
 
-        </div>
-
-        <!-- RIGHT VISUAL -->
-        <div class="skills-images">
-
-            <img src="https://placehold.co/150x80/DDA0DD/FFFFFF/png?text=Project+1" alt="Project">
-
-            <div class="logo-row">
-                <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/androidstudio.svg" alt="AndroidStudio">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/behance.svg" alt="Behance">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/cplusplus.svg" alt="Cplusplus">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/csswizardry.svg" alt="CSS">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/figma.svg" alt="Figma">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/gimp.svg" alt="Gimp">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/githubcopilot.svg" alt="GitHubCopilot">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/htmx.svg" alt="HTMX">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/intellijidea.svg" alt="IntellijIdea">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/javascript.svg" alt="JS">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/libreofficebase.svg" alt="LibreOfficeBase">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/notion.svg" alt="Notion">
-              <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/robloxstudio.svg" alt="RobloxStudio">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
             </div>
-
         </div>
 
-    </section>
+    </div>
 
-    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        Top ↑
-    </button>
+    <div>
 
-    <footer class="footer-pattern">
-        <p>© 2026 LikaLi1. All rights reserved.</p>
-    </footer>
+        <!-- APPLE STYLE MARQUEE -->
+        <div class="logo-wrapper">
+
+            <div class="logo-track">
+
+                <div class="logo-set">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/androidstudio.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/behance.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/cplusplus.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/figma.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/javascript.svg" alt="">
+                </div>
+
+                <div class="logo-set" aria-hidden="true">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/androidstudio.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/behance.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/cplusplus.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/figma.svg" alt="">
+                    <img class="small-logo" src="https://github.com/LikaLi1/About-Me/blob/main/docs/images/javascript.svg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<button class="scroll-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+Top ↑
+</button>
+
+<div class="footer-pattern">
+    © 2026 LikaLi1
+</div>
 
 </body>
 </html>
